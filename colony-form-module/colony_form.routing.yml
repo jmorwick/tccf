@@ -1,0 +1,6 @@
+colony_form:
+    path: /colony/hello
+    defaults:
+        _controller: Drupal\colony_form\Controller\ColonyFormController::hello
+    requirements:
+        _permission: 'access content'

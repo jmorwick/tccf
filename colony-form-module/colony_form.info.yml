@@ -1,0 +1,5 @@
+name: Colony Form
+type: module
+description: Maintain Database of Colonies
+package: Custom
+core: 8.x
