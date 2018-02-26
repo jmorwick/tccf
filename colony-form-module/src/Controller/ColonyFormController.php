@@ -3,9 +3,22 @@
 namespace Drupal\colony_form\Controller;
 
 class ColonyFormController {
+    public function getmapbase() {
+      $apikey = 'AIzaSyDEidvy2vklHYOkaOrRNpiL0aGL3WVIoMM';
+      return 
+'<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key='.$apikey.'
+    &q=Space+Needle,Seattle+WA" allowfullscreen>hi
+</iframe>';
+    }
+
     public function colonies() {
       // webform with colony submissions
       $form_node_title = 'Members Only'; 
+      
 
       // find node with webform
       $node = \Drupal::entityTypeManager()
@@ -23,8 +36,8 @@ class ColonyFormController {
         $map_data[] = $submission->getData();
       }
       return array(
-        '#title' => 'Hello World!',
-        '#markup' => print_r($map_data,true)
+        '#title' => 'Colony Information',
+        '#markup' => $this->getmapbase()
       );
     }
 }
