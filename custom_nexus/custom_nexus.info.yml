@@ -1,0 +1,36 @@
+name: custom nexus
+type: theme
+description: This is a custom_nexus sub theme of nexus
+core: 8.x
+
+# Defines the base theme
+base theme: nexus
+
+
+# Defines libraries group in which we can add css/js.
+libraries:
+  - custom_nexus/global-styling
+
+libraries-override:
+  nexus/global-css:
+    css:
+      theme:
+        assets/css/style.css: css/style.css
+  
+# Regions
+regions:
+  header: 'Header'
+  main_navigation: 'Main Navigation'
+  preface_first: 'Preface First'
+  preface_second: 'Preface Second'
+  preface_third: 'Preface Third'
+  highlighted: 'Highlighted'
+  sidebar_first: 'First Sidebar'
+  content_top: 'Content Top'
+  help: 'Help'
+  content: 'Content'
+  footer: 'Footer'
+  footer_first: 'First Bottom'
+  footer_second: 'Second Bottom'
+  footer_third: 'Third Bottom'
+  footer_fourth: 'Fourth Bottom'
