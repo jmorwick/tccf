@@ -3,4 +3,4 @@ colony_form:
     defaults:
         _controller: Drupal\colony_form\Controller\ColonyFormController::colonies
     requirements:
-        _permission: 'access content'
+        _permission: 'access user profiles'
