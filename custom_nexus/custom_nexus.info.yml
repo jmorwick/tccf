@@ -16,7 +16,8 @@ libraries-override:
     css:
       theme:
         assets/css/style.css: css/style.css
-  
+        assets/css/style.css: css/flixslider.css
+
 # Regions
 regions:
   header: 'Header'

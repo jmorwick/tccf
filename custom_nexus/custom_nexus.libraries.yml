@@ -2,4 +2,5 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+      css/flexslider.css: {}
 
