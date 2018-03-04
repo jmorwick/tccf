@@ -1,0 +1,36 @@
+<style>
+  #map {
+    height: 400px;
+    width: 400px;
+  }
+</style>
+
+<div id="map" height="470px" width="200px"></div>
+    <script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat: 39.0558, lng: -95.6890}
+        });
+	{% for key, location in locations %}
+        var infowindow{{key}} = new google.maps.InfoWindow({
+          content: '<div id="content"><h1><a href="/admin/structure/webform/manage/cat_colony_form/submission/{{location.id}}">Colony #{{ location.colony_id }}: {{ location.name }}</h1></a></div>'
+        });
+	var marker{{key}} = new google.maps.Marker({
+          position: {lat: {{ location.colony_location.lat }}, lng: {{ location.colony_location.lng }} },
+          map: map,
+          title: 'Colony #{{ location.colony_id }}: {{ location.name }}'
+        });
+        marker{{key}}.addListener('click', function() {
+          infowindow{{key}}.open(map, marker{{key}});
+        });
+	{% endfor %}
+    }
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEidvy2vklHYOkaOrRNpiL0aGL3WVIoMM&callback=initMap">
+    </script>

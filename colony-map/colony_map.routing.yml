@@ -1,6 +1,6 @@
 colony_form:
     path: /colonies
     defaults:
-        _controller: Drupal\colony_form\Controller\ColonyFormController::colonies
+        _controller: Drupal\colony_map\Controller\ColonyMapController::colonies
     requirements:
         _permission: 'access user profiles'

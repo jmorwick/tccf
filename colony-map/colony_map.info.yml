@@ -1,5 +1,5 @@
-name: Colony Form
+name: Colony Map
 type: module
-description: Maintain Database of Colonies
+description: View Map of Ferral Cat Colonies 
 package: Custom
 core: 8.x
